@@ -1,14 +1,13 @@
 import React from 'react';
 
-import { initialItems } from '../initialItems';
 import Item from './Item';
 
-const PackingList = () => {
+const PackingList = ({ items, onDeleteItem }) => {
     return (
         <div className="list">
             <ul>
-                {initialItems.map((item) => (
-                    <Item item={item} key={item.id} />
+                {items.map((item) => (
+                    <Item item={item} key={item.id} onDeleteItem={onDeleteItem} />
                 ))}
             </ul>
         </div>
